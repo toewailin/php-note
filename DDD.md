@@ -151,15 +151,23 @@ Frontend ဘက်မှာလည်း Backend ရဲ့ Domain တွေအတ
 
 ```text
 resources/js/
-├── Components/       // 🌟 နေရာတိုင်းသုံးမည့် UI များ (e.g., Button, Modal, Table)
-├── Layouts/          // AppLayout, AuthLayout
-├── Types/            // generated.d.ts (Backend မှ Auto ထွက်လာသော Types)
-└── Features/         // 🌟 Domain အလိုက် ခွဲထုတ်ထားသော Frontend Logic များ
-    ├── Dispatch/
-    │   ├── Components/ // Dispatch တွင်သာသုံးမည့် Component (e.g., TripStatusBadge)
-    │   ├── Pages/      // Index.tsx, Create.tsx
-    │   └── Hooks/      // useTripCalculations.ts
-    └── Finance/
+├── Components/                    # 🧩 နေရာတိုင်းသုံးမည့် Shared UI (e.g., Button, Modal, Table)
+├── Layouts/                       # 🖼️ Layouts (e.g., AppLayout, Sidebar)
+├── types/                         # 📝 Centralized Types
+│   ├── models.d.ts                # Database Models နှင့် တိုက်ရိုက်သက်ဆိုင်သော Types
+│   └── index.d.ts                 # အထွေထွေ Types များ
+│
+└── Pages/                         # 📄 Inertia Pages များ
+    ├── Dispatch/                  # Dispatch Module အတွက်
+    │   ├── Components/            # Dispatch တွင်သာသုံးမည့် သီးသန့် UI များ (e.g., TripStatusBadge)
+    │   ├── Trips/                 # ခရီးစဉ် Pages
+    │   │   ├── Index.tsx
+    │   │   ├── Create.tsx
+    │   │   └── Show.tsx
+    │   └── Customers/
+    │
+    ├── Finance/                   # Finance Module အတွက်
+    └── Fleet/
 
 ```
 
